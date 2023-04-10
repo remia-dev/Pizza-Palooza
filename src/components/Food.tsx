@@ -1,29 +1,37 @@
 import React from "react";
 import * as te from "tw-elements";
 import { ToastContainer, toast } from "react-toastify";
+import { useSelector, useDispatch } from "react-redux";
+import { increment } from "../features/cartSlice";
 
+// I forgot to add price
 const Data = [
   {
+    id: 1,
     name: "Margherita",
     description: "Tomato sauce, mozzarella, basil",
     pic: "http://www.poppas.co.nz/wp-content/uploads/2018/01/Margherita.jpg",
   },
   {
+    id: 2,
     name: "Pepperoni",
     description: "Tomato sauce, mozzarella, spicy pepperoni",
     pic: "https://thelionsroarmhsn.com/wp-content/uploads/2015/04/Pepperoni_1.jpg",
   },
   {
+    id: 3,
     name: "Vegetarian",
     description: "Tomato sauce, mozzarella, veggies",
     pic: "http://milrecetas.net/wp-content/uploads/2015/07/Pizza-Vegetariana-3-1024x683.jpg",
   },
   {
+    id: 4,
     name: "Meat Lovers",
     description: "Tomato sauce, mozzarella, multiple meats",
     pic: "http://3.bp.blogspot.com/-itXh-9N2miA/UNtu4hLpzQI/AAAAAAAABgM/T2MVHeA9NSk/s1600/IMG_0925.JPG",
   },
   {
+    id: 5,
     name: "Hawaiian",
     description: "Tomato sauce, mozzarella, ham, pineapple",
     pic: "https://e3.365dm.com/17/06/1600x900/2c282d66970e0b5de04b40624de4882668b9e75feee2e6a05b0f4244d64b54d4_3974816.jpg?20170610032713",
@@ -31,18 +39,10 @@ const Data = [
 ];
 
 const Food = () => {
-  const Addon = () => {
-    toast.success("🦄 Wow so easy!", {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-  };
+  const dispatch = useDispatch()
+  const Clicked = () =>{
+    console.log()
+  }
 
   return (
     <div className="mt-5">
@@ -67,8 +67,8 @@ const Food = () => {
                   </p>
                   <button
                     type="button"
-                    className="inline-block rounded bg-red-950 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-red-950 focus:outline-none "
-                    onClick={Addon}
+                    className="inline-block rounded bg-red-950 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-red-950 focus:outline-none animate-pulse hover:animate-none"
+                    onClick={()=>dispatch(increment())}
                   >
                     Add
                   </button>

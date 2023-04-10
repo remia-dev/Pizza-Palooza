@@ -1,6 +1,7 @@
 import React from "react";
 import { GiFullPizza } from "react-icons/gi";
 import { HiOutlineShoppingCart } from "react-icons/hi";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   return (
@@ -24,7 +25,7 @@ const Navbar = () => {
             </h1>
             <div className="ml-4 mt-0.5 bg-red-400 w-[30px] rounded-lg">
               <h2 className="text-[17px] text-[#fff] font-serif flex justify-center">
-                2
+                0
               </h2>
             </div>
           </div>
